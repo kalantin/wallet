@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap"
+			rel="stylesheet"
+		/>
+		<link rel="stylesheet" href="/css/style.css" />
+		<script
+			src="https://kit.fontawesome.com/1533671944.js"
+			crossorigin="anonymous"
+		></script>
+	</head>
+	<body>
+		<h1 class="head"><i class="fa-solid fa-wallet"></i>Wallet</h1>
+		<h2 class="headTwo">Twój osobisty menedżer finansów</h2>
+		<div class="wrapper">
+			<div class="data">
+				<h2 class="data__head">LISTA TRANSAKCJI</h2>
+				<div class="data__profit profit">
+					<h2 class="profit__head heading">Przychód:</h2>
+					<ul class="profit__list list">
+						<li class="profit__listElement listElement">
+							<div class="profit__name">
+								<i class="fa-solid fa-money-bill-1-wave"></i>
+								<p class="profit__paragraf">Wypłata</p>
+							</div>
+							<div class="profit__value">
+								<p class="profit__amount">2500 zł</p>
+								<i class="fa-solid fa-xmark"></i>
+							</div>
+						</li> 
+					</ul>
+				</div>
+				<div class="data__expense expense">
+					<h2 class="expense__head heading">Wydatki:</h2>
+					<ul class="expense__list list">
+						<li class="expense__listElement listElement">
+							<div class="expense__name">
+								<i class="fa-solid fa-film"></i>
+								<p class="expense__paragraf">Kino</p>
+							</div>
+							<div class="expense__value">
+								<p class="expense__amount">200 zł</p>
+								<i class="fa-solid fa-xmark"></i>
+							</div>
+						</li>
+						<li class="expense__listElement listElement">
+							<div class="expense__name">
+								<i class="fa-solid fa-cart-arrow-down"></i>
+								<p class="expense__paragraf">Zakupy</p>
+							</div>
+							<div class="expense__value">
+								<p class="expense__amount">300 zł</p>
+								<i class="fa-solid fa-xmark"></i>
+							</div>
+						</li>
+						<li class="expense__listElement listElement">
+							<div class="expense__name">
+								<i class="fa-solid fa-burger"></i>
+								<p class="expense__paragraf">Jedzenie</p>
+							</div>
+							<div class="expense__value">
+								<p class="expense__amount">2200 zł</p>
+								<i class="fa-solid fa-xmark"></i>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="summary">
+				<h1 class="summary__head">DOSTĘPNE ŚRODKI:</h1>
+				<p class="summary__sum">1973 zł</p>
+				<div class="summary__buttons">
+					<button class="summary__add btn">
+						<i class="fa-solid fa-plus"></i>Dodaj transakcje
+					</button>
+					<button class="summary__remove btn">
+						<i class="fa-solid fa-trash-can"></i>Usuń wwszystko
+					</button>
+				</div>
+				<h1 class="summary__head">WYBIERZ STYL:</h1>
+				<div class="summary__colors">
+					<div class="summary__day"></div>
+					<div class="summary__night"></div>
+				</div>
+			</div>
+		</div>
+		<div class="popup">
+			<h1 class="popup__head">DODAJ NOWĄ TRANSAKCJĘ</h1>
+			<label for="name">Nazwa:</label>
+			<p class="popup__paragraf">(podaj nazwę transakcji)</p>
+			<input type="text" name="" id="name" class="popup__input"/>
+			<label for="cost">Kwota:</label>
+			<p class="popup__paragraf">
+				(podaj kwotę transakcji, jeśli dodajesz wydatki postaw znak munus na
+				początku kwoty)
+			</p>
+			<input type="number" name="" id="cost" class="popup__input"/>
+			<label for="name">Wybierz kategorie:</label>
+			<p class="popup__paragraf">([+] oznacza przychód, [-] oznacza wydatki)</p>
+			<select name="" id="category" class="popup__input">
+				<option value="0" disabled selected>--wybierz kategorie--</option>
+				<option value="1">[+]Zakupy</option>
+				<option value="2">[-]Jedzenie</option>
+				<option value="3">[-]Kino</option>
+			</select>
+			<div class="popup__buttons">
+				<button class="popup__save btn">
+					<i class="fa-solid fa-floppy-disk"></i>Zapisz
+				</button>
+				<button class="popup__cancel btn">
+					<i class="fa-solid fa-rectangle-xmark"></i>Anuluj
+				</button>
+			</div>
+		</div>
+		<script src="main.js"></script>
+	</body>
+</html>

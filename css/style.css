@@ -1,0 +1,331 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+:root {
+  --day: white;
+  --night: #071c2e;
+}
+
+body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: var(--night);
+  color: var(--day);
+  font-family: 'Roboto', sans-serif;
+  font-weight: 100;
+}
+
+.head {
+  margin-top: 50px;
+  font-size: 4em;
+}
+
+.head i {
+  margin-right: 10px;
+}
+
+.headTwo {
+  margin-bottom: 100px;
+}
+
+.wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  width: 80%;
+  height: 100%;
+}
+
+.data {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  height: 450px;
+  min-width: 800px;
+}
+
+.data__head {
+  width: 100%;
+  font-size: 2em;
+  font-weight: 100;
+  text-align: center;
+}
+
+.data__profit, .data__expense {
+  border: 1px solid var(--day);
+  width: 45%;
+}
+
+.profit,
+.expense {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.profit__head,
+.expense__head {
+  color: #00806b;
+}
+
+.profit__name,
+.expense__name {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.profit__name i,
+.expense__name i {
+  margin-right: 10px;
+}
+
+.profit__value,
+.expense__value {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  color: #00806b;
+}
+
+.profit__value i,
+.expense__value i {
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+.expense__head {
+  color: tomato;
+}
+
+.expense__value {
+  color: tomato;
+}
+
+.list {
+  list-style: none;
+  width: 90%;
+  margin-bottom: 40px;
+}
+
+.listElement {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 20px 0;
+  font-size: 1.2em;
+  border-bottom: 1px solid var(--day);
+}
+
+.heading {
+  font-size: 2em;
+  text-align: center;
+  margin: 20px 0;
+}
+
+.summary {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  min-width: 500px;
+  height: 70vh;
+  border: 1px solid var(--day);
+}
+
+.summary__head {
+  font-size: 3em;
+}
+
+.summary__sum {
+  font-size: 5em;
+  font-weight: bold;
+  margin-bottom: 50px;
+}
+
+.summary__buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  width: 100%;
+  margin-bottom: 50px;
+}
+
+.summary__colors {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 60%;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  margin-top: 30px;
+}
+
+.summary__day, .summary__night {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: 1px solid white;
+  background-color: white;
+  cursor: pointer;
+  -webkit-transition: -webkit-box-shadow 0.1s;
+  transition: -webkit-box-shadow 0.1s;
+  transition: box-shadow 0.1s;
+  transition: box-shadow 0.1s, -webkit-box-shadow 0.1s;
+}
+
+.summary__night {
+  background-color: #071c2e;
+}
+
+.summary__day:hover, .summary__night:hover {
+  -webkit-box-shadow: 0px 0px 24px 0px white;
+          box-shadow: 0px 0px 24px 0px white;
+}
+
+.btn {
+  border: 1px solid var(--day);
+  border-radius: 8px;
+  color: var(--day);
+  background-color: transparent;
+  padding: 10px 20px;
+  font-size: 1em;
+  cursor: pointer;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.btn i {
+  margin-right: 10px;
+}
+
+.btn:hover {
+  background-color: var(--day);
+  color: var(--night);
+}
+
+.popup {
+  position: absolute;
+  display: none;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  color: white;
+  background-image: -webkit-gradient(linear, left top, right top, from(#434343), to(black));
+  background-image: linear-gradient(to right, #434343 0%, black 100%);
+}
+
+.popup__input {
+  width: 50%;
+  height: 40px;
+  border-radius: 5px;
+  margin-bottom: 50px;
+  padding-left: 10px;
+}
+
+.popup label {
+  font-size: 2em;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.popup__paragraf {
+  margin-bottom: 30px;
+  -webkit-text-decoration: italic;
+          text-decoration: italic;
+}
+
+.popup__buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 30%;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.popup__buttons button {
+  color: white;
+  padding: 20px 40px;
+  font-size: 1.2em;
+  border: 1px solid white;
+}
+
+.popup__buttons button:hover {
+  background-color: white;
+  color: #071c2e;
+}
+
+.showPop {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.day {
+  border: 1px solid #071c2e;
+}
+
+.error {
+  border: 1px solid tomato;
+  background-color: #ff826c;
+}
+/*# sourceMappingURL=style.css.map */
