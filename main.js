@@ -15,7 +15,6 @@ const root = document.querySelector(':root');
 const inputCost = document.querySelector('#cost');
 const inputName = document.querySelector('#name');
 const select = document.querySelector('select');
-const removeElement = document.getElementsByClassName('fa-xmark');
 const plus = [];
 const minus = [];
 let sum;
