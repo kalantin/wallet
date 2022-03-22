@@ -15,24 +15,27 @@ const root = document.querySelector(':root');
 const inputCost = document.querySelector('#cost');
 const inputName = document.querySelector('#name');
 const select = document.querySelector('select');
-const plus = [];
-const minus = [];
+let moneyAll = [0];
+let icon;
 let sum;
+let plusSum = 0;
+let minusSum = 0;
 
-const allMoney = () => {
-	let plusSum = 0;
-	let minusSum = 0;
-	for (let i = 0; i < plus.length; i++) {
-		plusSum += plus[i];
-	}
-	for (let i = 0; i < minus.length; i++) {
-		minusSum += minus[i];
-	}
-	sum = plusSum + minusSum;
-	// console.log(plusSum);
-	// console.log(minusSum);
-	summarySum.textContent = `${sum} zł`;
+const allMoney = (money) => {
+	const newMoney = money.reduce((a, b) => a + b);
+	summarySum.textContent = `${newMoney} zł`;
 };
+
+// const allMoney = () => {
+// 	for (let i = 0; i < plus.length; i++) {
+// 		plusSum += plus[i];
+// 	}
+// 	for (let i = 0; i < minus.length; i++) {
+// 		minusSum += minus[i];
+// 	}
+// 	sum = plusSum + minusSum;
+// 	summarySum.textContent = `${sum} zł`;
+// };
 
 const showPop = () => {
 	popup.classList.add('showPop');
@@ -46,6 +49,8 @@ const hidePop = () => {
 const removeAll = () => {
 	list.forEach((el) => {
 		el.innerHTML = '';
+		plus = [0];
+		minus = [0];
 	});
 	summarySum.textContent = `0 zł`;
 };
@@ -53,17 +58,11 @@ const remEl = (e) => {
 	if (e.target.classList.contains('fa-xmark')) {
 		e.target.closest(`li`).remove();
 		const price = parseInt(e.target.previousElementSibling.textContent);
+		const priceIndex = moneyAll.indexOf(price);
 		console.log(price);
-		if (price < 0) {
-			const priceIndexMinus= minus.indexOf(price);
-			console.log(priceIndexMinus);
-			minus.splice(priceIndexMinus, 1);
-		} else {
-			const priceIndexPlus = plus.indexOf(price);
-			console.log(priceIndexPlus);
-			plus.splice(priceIndexPlus, 1);
-		}
-		allMoney();
+		moneyAll.splice(priceIndex, 1);
+
+		allMoney(moneyAll);
 	}
 };
 const changeDay = () => {
@@ -78,16 +77,15 @@ const changeNight = () => {
 
 const createElement = () => {
 	const li = document.createElement('li');
-	const price = parseInt(inputCost.value);
+	const price = parseFloat(inputCost.value);
 	const name = inputName.value;
 	const category = select.selectedIndex;
-	let icon;
 
 	if (category === 1) {
 		icon = 'cart-arrow-down';
 	} else if (category === 2) {
 		icon = 'burger';
-	} else {
+	} else if (category === 3) {
 		icon = 'film';
 	}
 
@@ -102,7 +100,7 @@ const createElement = () => {
 		</div>`;
 		li.classList.add('listElement', 'expense__listElement');
 		expenseList.append(li);
-		minus.push(price);
+		moneyAll.push(price)
 	} else {
 		li.innerHTML = `<div class="profit__name">
 		<i class="fa-solid fa-money-bill-1-wave"></i>
@@ -114,9 +112,9 @@ const createElement = () => {
 		</div>`;
 		li.classList.add('listElement', 'profit__listElement');
 		profitList.append(li);
-		plus.push(price);
+		moneyAll.push(price)
 	}
-
+	allMoney(moneyAll);
 	hidePop();
 };
 const checkForm = () => {
@@ -126,7 +124,6 @@ const checkForm = () => {
 		inputName.value !== ''
 	) {
 		createElement();
-		allMoney();
 	} else {
 		alert('Wypełnij wszystkie pola!');
 	}
